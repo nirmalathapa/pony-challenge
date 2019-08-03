@@ -1,33 +1,139 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+button:focus{  
+  outline: 1px solid #268a16;  
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App{
   display: flex;
   flex-direction: column;
+}
+.demon{
+  max-width:100%;
+  max-height:100%;
+}
+.pony{
+  max-width:100%;
+  max-height:100%;
+}
+.finish{
+  max-width:100%;
+  max-height:100%;
+}
+.maze {
+  top:0;
+  left: 0;
+  margin: 0 auto;
+  position: relative;
+  border-right:2px solid #f561cb;
+  border-bottom:2px solid #f561cb;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+
+.box {
+  height: 30px;
+  width: 32px;  
+  background-color: #fff6ff;
+  padding: 0;
+  border: 2px solid  #fff6ff; 
+}
+
+.box.north {
+  border-top: 2px solid #d64daf;
+}
+i {
+  color:red;
+  background-color: #fff6ff;
+  height: 5px;;
+  border: none;
+}
+.box.west {
+  border-left: 2px solid #d64daf;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: rgb(255, 255, 255, 0.80);
+}
+.start-game{
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.start-game h1{
+  margin: 1em 0.5em;
+  text-align: center;
+  color: #c708b7;
+  font-family: cursive;
+  font-weight: 600;
+  font-size: 3em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ol{
+  margin-bottom: 1.5em;  
+  margin-left: 5em;
+  margin-top: 1.5em;
+}
+
+li{
+  padding: 0.5em 0;
+}
+
+.button_start{
+  -moz-box-shadow:inset 0px 1px 0px 0px #f187d7;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #d837dd;
+	box-shadow:inset 0px 1px 0px 0px #a909b8;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #d30c9b), color-stop(1, rgb(212, 4, 202)));
+	background:-moz-linear-gradient(top, #d30c9b 5%, #d30c9b 100%);
+	background:-webkit-linear-gradient(top, #d30c9b 5%, #d30c9b 100%);
+	background:-o-linear-gradient(top, #d30c9b 5%, #d30c9b 100%);
+	background:-ms-linear-gradient(top, #d30c9b 5%, #d30c9b 100%);
+	background:linear-gradient(to bottom, #d30c9b 5%, #d30c9b 100%);
+	background-color:#d30c9b;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #cc0ec2;
+	display:block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #db7cde;
+}
+
+.start-pony{
+  max-width:200px;
+  max-height:20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  animation-name: bounce;
+  animation-timing-function: linear;
+  transform-origin: left;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(-100px); }
+  100% { transform: translateX(0); }
 }
